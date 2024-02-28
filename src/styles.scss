@@ -5,6 +5,7 @@ body {
 
 html {
     scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
 }
 
 body {
@@ -22,4 +23,22 @@ body {
 		sans-serif;
 	display: flex;
 	flex-direction: column;
+}
+
+.kalam-light {
+	font-family: 'Kalam', cursive;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.kalam-regular {
+	font-family: 'Kalam', cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.kalam-bold {
+	font-family: 'Kalam', cursive;
+	font-weight: 700;
+	font-style: normal;
 }

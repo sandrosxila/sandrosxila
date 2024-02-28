@@ -18,7 +18,7 @@
 		};
 	};
 
-	const phrases = ['Hi!', "I am Sandro!"];
+	const phrases = ['Hi!', 'I am Sandro!'];
 
 	let phrase = '';
 
@@ -36,41 +36,87 @@
 </script>
 
 <section id="about">
-	{#key phrase}
-		<p
-			in:typewriter
-			on:introend={() => {
-				if (phrase === phrases[0]) {
-					phraseTimeout = setTimeout(() => {
-						phrase = phrases[1];
-					}, 300);
-				}
-			}}
-		>
-			{phrase}
-		</p>
-	{/key}
+	<div class="container">
+		{#key phrase}
+			<p
+				class="kalam-regular"
+				in:typewriter
+				on:introend={() => {
+					if (phrase === phrases[0]) {
+						phraseTimeout = setTimeout(() => {
+							phrase = phrases[1];
+						}, 300);
+					}
+				}}
+			>
+				{phrase}
+			</p>
+		{/key}
+	</div>
 </section>
 
-<section id="experience">This is my Experience!!!</section>
+<section id="experience">
+	<div class="container">This is my Experience!!!</div>
+</section>
 
-<section id="skills">This is my Skills!!!</section>
+<section id="skills">
+	<div class="container">This is my Skills!!!</div>
+</section>
 
-<section id="education">This is my Education!!!</section>
+<section id="education">
+	<div class="container">This is my Education!!!</div>
+</section>
 
-<section id="projects">These are my projects!!!</section>
+<section id="projects">
+	<div class="container">These are my projects!!!</div>
+</section>
 
 <style lang="scss">
 	section {
 		height: 100vh;
+		scroll-snap-align: start;
+		scroll-margin-block-start: 80px;
+		scroll-margin-block-end: -80px;
+		display: flex;
+		flex-direction: column;
 
 		&#about {
 			background: #191d32;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			font-size: 6em;
+
+			.container {
+				margin-bottom: 0;
+			}
 		}
+
+		&#experience {
+			background: #57375a;
+		}
+
+		&#skills {
+			background: #a0526c;
+		}
+
+		&#education {
+			background: #de796a;
+		}
+
+		&#projects {
+			background: #feb360;
+		}
+
+		&:last-child {
+			height: calc(100vh - 80px);
+			padding-bottom: 0;
+		}
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		font-size: 6em;
+		flex-grow: 1;
+		margin-bottom: 80px;
 	}
 </style>

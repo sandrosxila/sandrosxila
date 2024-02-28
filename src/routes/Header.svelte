@@ -50,7 +50,7 @@
 		display: flex;
 		position: fixed;
 		transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-		transform: translateY(var(--top));
+		/* transform: translateY(var(--top)); */
 		top: 0;
 		left: 0;
 	}
