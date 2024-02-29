@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { TransitionConfig } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import Experience from './Experience.svelte';
 
 	type TypewriterParams = { speed?: number };
 	type Typewriter = (node: Element, params?: TypewriterParams) => TransitionConfig;
@@ -36,7 +37,7 @@
 </script>
 
 <section id="about">
-	<div class="container">
+	<div class="container centered-text">
 		{#key phrase}
 			<p
 				class="kalam-regular"
@@ -56,19 +57,21 @@
 </section>
 
 <section id="experience">
-	<div class="container">This is my Experience!!!</div>
+	<div class="container">
+		<Experience />
+	</div>
 </section>
 
 <section id="skills">
-	<div class="container">This is my Skills!!!</div>
+	<div class="container centered-text">This is my Skills!!!</div>
 </section>
 
 <section id="education">
-	<div class="container">This is my Education!!!</div>
+	<div class="container centered-text">This is my Education!!!</div>
 </section>
 
 <section id="projects">
-	<div class="container">These are my projects!!!</div>
+	<div class="container centered-text">These are my projects!!!</div>
 </section>
 
 <style lang="scss">
@@ -111,12 +114,15 @@
 	}
 
 	.container {
+		flex-grow: 1;
+		margin-bottom: 80px;
+	}
+
+	.centered-text {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		color: white;
 		font-size: 6em;
-		flex-grow: 1;
-		margin-bottom: 80px;
 	}
 </style>
