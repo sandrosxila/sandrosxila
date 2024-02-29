@@ -6,36 +6,48 @@
 			company: 'Alta Software',
 			startDate: 'Oct 2020',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident hic necessitatibus nesciunt' +
-				'asperiores illo recusandae dolorem quae corporis veritatis veniam dignissimos itaque, eum' +
-				'voluptate debitis ipsa ea vel facilis. Autem?'
+				'I was working on a big loan management software. There were ' +
+				'implemented different logics for various types of loan lifecycles. ' +
+				'The main clients for the company were banks. The system was ' +
+				'based on Domain Driven Design. We were following Object-' +
+				'Oriented Programming Principles and Design Patterns.'
 		},
 		{
 			title: 'Middle Frontend React Developer',
 			company: 'MiMa',
 			startDate: 'Aug 2021',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident hic necessitatibus nesciunt' +
-				'asperiores illo recusandae dolorem quae corporis veritatis veniam dignissimos itaque, eum' +
-				'voluptate debitis ipsa ea vel facilis. Autem?'
+				'The gambling app for live casino depended on CSS animations ' +
+				'and the react-spring library. The animation was the most ' +
+				'challenging part of this project because the app had to be fast, ' +
+				'reliable, and performant. We had our own chat, which enabled ' +
+				'users to talk with dealers. The chat was based on Socket.io.'
 		},
 		{
 			title: 'Middle Front-End Developer',
 			company: 'Georgian Service Group 2007',
 			startDate: 'Apr 2022',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident hic necessitatibus nesciunt' +
-				'asperiores illo recusandae dolorem quae corporis veritatis veniam dignissimos itaque, eum' +
-				'voluptate debitis ipsa ea vel facilis. Autem?'
+				'Worked on a Management Application using Antd library and ' +
+				'Redux. Used Jenkins for CI/CD. The Application was full of ' +
+				'complex forms with validations. The webpage had a Dashboard' +
+				'and calendar. The application was used by Zooplus Services.'
 		},
 		{
 			title: 'Front-End Developer',
 			company: 'Productive Edge',
 			startDate: 'Oct 2022',
 			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident hic necessitatibus nesciunt' +
-				'asperiores illo recusandae dolorem quae corporis veritatis veniam dignissimos itaque, eum' +
-				'voluptate debitis ipsa ea vel facilis. Autem?'
+				'Worked with a big mono repo project. Used Lerna as a mono repo tool, RTK ' +
+				'with redux-observable (based on rxJs) for state management, Storybook and' +
+				'Stencil for private UI library, and react-hook-form for managing forms.' +
+				'Strictly followed SRP, KISS, DRY, and OCP.'
+		},
+		{
+			title: 'Senior Front-End Developer',
+			company: 'Twinit',
+			startDate: 'Mar 2024',
+			description: 'Worked on Atlassian plugins. Supporting different websites.'
 		}
 	];
 
@@ -44,7 +56,7 @@
 </script>
 
 <div class="layout">
-	<TimeLine bind:activeLineItem itemsLength={items.length} />
+	<TimeLine bind:activeLineItem items={items} />
 	<div class="content-wrapper">
 		<div class="content-box" style:--active-item={activeLineItem}>
 			{#each items as item}
@@ -80,7 +92,7 @@
 		$activeItem: var(--active-item);
 
 		transform: translateX(calc(-1 * 100% * ($activeItem)));
-        transition: transform 0.4s ease-in-out;
+		transition: transform 0.4s ease-in-out;
 
 		display: flex;
 	}

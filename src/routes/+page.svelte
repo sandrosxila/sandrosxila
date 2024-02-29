@@ -2,6 +2,7 @@
 	import type { TransitionConfig } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import Experience from './Experience.svelte';
+	import Skills from './Skills.svelte';
 
 	type TypewriterParams = { speed?: number };
 	type Typewriter = (node: Element, params?: TypewriterParams) => TransitionConfig;
@@ -63,7 +64,9 @@
 </section>
 
 <section id="skills">
-	<div class="container centered-text">This is my Skills!!!</div>
+	<div class="container">
+		<Skills />
+	</div>
 </section>
 
 <section id="education">

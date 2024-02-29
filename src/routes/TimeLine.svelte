@@ -1,17 +1,21 @@
 <script lang="ts">
 	export let activeLineItem: number;
-	export let itemsLength: number;
+	export let items: {title: string, company: string, startDate: string, description: string}[];
 </script>
 
 <div class="timeline">
 	<div class="line-wrapper">
-		{#each Array.from({ length: itemsLength }) as _, i}
+		{#each items as item, i}
 			<button
-				style:--left="{20 + i * 20}%"
+				style:--left="{20 + i * 15}%"
 				class="line-item"
 				class:active-line-item={activeLineItem == i}
-				on:click={() => {activeLineItem = i}}
-			></button>
+				on:click={() => {
+					activeLineItem = i;
+				}}
+			>
+				<span>{item.startDate}</span>
+			</button>
 		{/each}
 	</div>
 </div>
@@ -72,6 +76,16 @@
 		border: 2px solid white;
 		cursor: pointer;
 		z-index: 1;
+
+		span {
+			position: absolute;
+			white-space:nowrap;
+			top: -25px;
+			left: 50%;
+			transform: translate(-50%, 0);
+			color: white;
+			font-size: 0.7rem;
+		}
 	}
 
 	.active-line-item {
