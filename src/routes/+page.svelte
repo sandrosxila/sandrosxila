@@ -3,6 +3,8 @@
 	import { onMount } from 'svelte';
 	import Experience from './Experience.svelte';
 	import Skills from './Skills.svelte';
+	import Projects from './Projects.svelte';
+	import Contact from './Contact.svelte';
 
 	type TypewriterParams = { speed?: number };
 	type Typewriter = (node: Element, params?: TypewriterParams) => TransitionConfig;
@@ -69,12 +71,16 @@
 	</div>
 </section>
 
-<section id="education">
-	<div class="container centered-text">This is my Education!!!</div>
+<section id="projects">
+	<div class="container">
+		<Projects />
+	</div>
 </section>
 
-<section id="projects">
-	<div class="container centered-text">These are my projects!!!</div>
+<section id="contact">
+	<div class="container">
+		<Contact />
+	</div>
 </section>
 
 <style lang="scss">
@@ -84,7 +90,7 @@
 		scroll-margin-block-start: 80px;
 		scroll-margin-block-end: -80px;
 		display: flex;
-		flex-direction: column;
+		overflow: hidden;
 
 		&#about {
 			background: #191d32;
@@ -102,11 +108,11 @@
 			background: #a0526c;
 		}
 
-		&#education {
+		&#projects {
 			background: #de796a;
 		}
 
-		&#projects {
+		&#contact {
 			background: #feb360;
 		}
 
@@ -119,6 +125,7 @@
 	.container {
 		flex-grow: 1;
 		margin-bottom: 80px;
+		overflow: hidden;
 	}
 
 	.centered-text {

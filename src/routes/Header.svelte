@@ -1,36 +1,17 @@
 <script lang="ts">
-    let scrollY = 0;
-	let navTop = 0;
-	let isTicking = false;
-    const headerHeight = 80;
+	import { getContext } from 'svelte';
+	import type { Writable } from 'svelte/store';
+
+	const hash: Writable<string> = getContext('active-section');
 </script>
 
-<svelte:window
-	on:scroll={() => {
-		if (!isTicking) {
-            isTicking = true;
-			requestAnimationFrame(() => {
-				const diff = Math.abs(scrollY - window.scrollY);
-				// scrolling down
-				if (scrollY < window.scrollY) {
-					navTop = Math.max(-headerHeight, navTop - diff);
-				} else {
-					navTop = Math.min(0, navTop + diff);
-				}
-				scrollY = window.scrollY;
-                isTicking = false;
-			});
-		}
-	}}
-/>
-
 <header>
-	<nav style:--top="{navTop}px">
-		<a href="#about">about</a>
-		<a href="#experience">experience</a>
-		<a href="#skills">skills</a>
-		<a href="#education">Education</a>
-		<a href="#projects">Projects</a>
+	<nav>
+		<a href="#about" class:active={$hash === 'about'}>About</a>
+		<a href="#experience" class:active={$hash === 'experience'}>Experience</a>
+		<a href="#skills" class:active={$hash === 'skills'}>Skills</a>
+		<a href="#projects" class:active={$hash === 'projects'}>Projects</a>
+		<a href="#contact" class:active={$hash === 'contact'}>Contact</a>
 	</nav>
 </header>
 
@@ -50,8 +31,15 @@
 		display: flex;
 		position: fixed;
 		transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-		/* transform: translateY(var(--top)); */
 		top: 0;
 		left: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.active {
+		text-decoration: underline;
 	}
 </style>

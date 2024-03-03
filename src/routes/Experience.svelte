@@ -52,7 +52,6 @@
 	];
 
 	let activeLineItem = items.length - 1;
-	console.log(activeLineItem);
 </script>
 
 <div class="layout">
