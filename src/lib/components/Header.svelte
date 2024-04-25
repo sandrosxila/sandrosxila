@@ -43,10 +43,27 @@
 
 	a {
 		text-decoration: none !important;
+
+		&:visited.active::after{
+			background: purple;
+		}
+
+		&.active::after{
+			background: blue;
+		}
 	}
 
 	.active {
-		text-decoration: underline !important;
-		text-underline-offset: 0.1em; 
+		position: relative;
+
+		&::after {
+			content: '';
+			width: 100%;
+			height: 1px;
+			
+			position: absolute;
+			bottom: 2px;
+			left: 0;
+		}
 	}
 </style>
