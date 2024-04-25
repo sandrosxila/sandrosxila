@@ -109,9 +109,9 @@
 		padding: 1rem;
 		gap: 0.45rem;
         height: 320px;
-        border-radius: 0.5rem;
-        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-        margin-top: 0.75rem;
+        /* border-radius: 0.5rem; */
+		border: 4px solid black;
+        margin-top: auto;
         margin-bottom: auto;
 	}
 
@@ -133,7 +133,7 @@
         align-items: center;
         justify-content: center;
         padding: 0.4rem 0.55rem;
-        border-radius: 0.35rem;
+        /* border-radius: 0.35rem; */
         cursor: pointer;
         background-color: #3D3854;
         color: white;
@@ -159,7 +159,7 @@
 		align-items: center;
 		background-color: #464860;
 		color: white;
-		border-radius: 4rem;
+		/* border-radius: 4rem; */
 		font-size: 0.8rem;
 		padding: 0.4rem 0.55rem;
 	}

@@ -29,7 +29,7 @@
 </div>
 
 <style lang="scss">
-	$background-color: #57375a;
+	$background-color: #000;
 
 	.timeline {
 		position: relative;
@@ -51,7 +51,7 @@
 			position: absolute;
 			content: '';
 			left: 0;
-			background-image: linear-gradient(to right, $background-color, transparent);
+			/* background-image: linear-gradient(to right, $background-color, transparent); */
 			width: 180px;
 			height: 100%;
 		}
@@ -60,7 +60,7 @@
 			position: absolute;
 			content: '';
 			right: 0;
-			background-image: linear-gradient(to right, transparent, $background-color);
+			/* background-image: linear-gradient(to right, transparent, $background-color); */
 			width: 180px;
 			height: 100%;
 		}
@@ -110,5 +110,7 @@
 
 	.active-line-item {
 		background-color: white;
+		font-weight: bold;
+		transform: translate(-50%, -50%) scale(1.2);
 	}
 </style>

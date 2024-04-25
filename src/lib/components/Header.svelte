@@ -46,6 +46,6 @@
 	}
 
 	.active {
-		text-decoration: underline;
+		text-decoration: underline !important;
 	}
 </style>
