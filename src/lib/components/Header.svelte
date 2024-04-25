@@ -7,11 +7,21 @@
 
 <header>
 	<nav>
-		<a href="#about" class:active={$hash === 'about'}>About</a>
-		<a href="#experience" class:active={$hash === 'experience'}>Experience</a>
-		<a href="#skills" class:active={$hash === 'skills'}>Skills</a>
-		<a href="#projects" class:active={$hash === 'projects'}>Projects</a>
-		<a href="#contact" class:active={$hash === 'contact'}>Contact</a>
+		<li class:active={$hash === 'about'}>
+			<a href="#about">About</a>
+		</li>
+		<li class:active={$hash === 'experience'}>
+			<a href="#experience">Experience</a>
+		</li>
+		<li class:active={$hash === 'skills'}>
+			<a href="#skills">Skills</a>
+		</li>
+		<li class:active={$hash === 'projects'}>
+			<a href="#projects">Projects</a>
+		</li>
+		<li class:active={$hash === 'contact'}>
+			<a href="#contact">Contact</a>
+		</li>
 	</nav>
 </header>
 
@@ -31,7 +41,6 @@
 		gap: 8px;
 		display: flex;
 		position: fixed;
-		transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 		top: 0;
 		left: 0;
 
@@ -44,11 +53,14 @@
 	a {
 		text-decoration: none !important;
 		color: black;
+	}
+
+	li {
+		list-style: none;
 		padding: 3px 6px;
 	}
 
 	.active {
 		background-color: pink;
-		
 	}
 </style>
