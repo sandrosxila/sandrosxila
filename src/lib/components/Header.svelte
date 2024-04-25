@@ -42,10 +42,11 @@
 	}
 
 	a {
-		text-decoration: none;
+		text-decoration: none !important;
 	}
 
 	.active {
 		text-decoration: underline !important;
+		text-underline-offset: 0.1em; 
 	}
 </style>
