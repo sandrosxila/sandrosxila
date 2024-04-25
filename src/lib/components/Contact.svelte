@@ -1,7 +1,3 @@
-<script lang="ts">
-
-</script>
-
 <div class="layout">
 	<h1 class="title">Contact Me</h1>
     <div class="button-group">
@@ -24,8 +20,12 @@
 
     .title {
         color: white;
-        font-size: 4rem;
+        font-size: 3rem;
         margin-bottom: 5rem;
+
+        @media screen and (min-width: 576px) {
+            font-size: 4rem;
+        }
     }
 
     .button-group {

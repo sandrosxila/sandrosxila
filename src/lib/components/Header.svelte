@@ -27,12 +27,18 @@
 		background-color: white;
 		justify-content: space-between;
 		align-items: center;
-		padding: 0 64px;
+		padding: 0 5%;
+		gap: 8px;
 		display: flex;
 		position: fixed;
 		transition: transform 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 		top: 0;
 		left: 0;
+
+		@media screen and (min-width: 576px) {
+			padding: 0 64px;
+			gap: 0;
+		}
 	}
 
 	a {

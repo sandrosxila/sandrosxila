@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { horizontalSwipe } from '$lib/actions/horizontalSwipe';
 	import TimeLine from './TimeLine.svelte';
 	let items = [
 		{
@@ -38,7 +39,7 @@
 			company: 'Pollin',
 			startDate: 'Sep 2022',
 			description:
-				'I\'ve contributed to a clinic app project utilizing Next.js, where we integrated ' +
+				"I've contributed to a clinic app project utilizing Next.js, where we integrated " +
 				'Material UI for frontend design and implemented server-side rendering (SSR) ' +
 				'to enhance performance. This ensured a seamless user experience with ' +
 				'optimized page loading and improved search engine visibility.'
@@ -57,19 +58,31 @@
 
 	let activeLineItem = items.length - 1;
 
-	function changeActiveLineItem (event: CustomEvent<{activeLineItem: number}>) {
+	function changeActiveLineItem(event: CustomEvent<{ activeLineItem: number }>) {
 		activeLineItem = event.detail.activeLineItem;
 	}
-	
+
+	function handleSwipeLeft() {
+		activeLineItem = Math.min(activeLineItem + 1, items.length - 1);
+	}
+
+	function handleSwipeRight() {
+		activeLineItem = Math.max(0, activeLineItem - 1);
+	}
 </script>
 
 <div class="layout">
-	<TimeLine on:itemChange={changeActiveLineItem} activeLineItem={activeLineItem} items={items} />
-	<div class="content-wrapper">
+	<TimeLine on:itemChange={changeActiveLineItem} {activeLineItem} {items} />
+	<div
+		class="content-wrapper"
+		use:horizontalSwipe
+		on:swipeLeft={handleSwipeLeft}
+		on:swipeRight={handleSwipeRight}
+	>
 		<div class="content-box" style:--active-item={activeLineItem}>
 			{#each items as item}
 				<div class="content">
-					<h2>{item.title}</h2>
+					<h2 class="title">{item.title}</h2>
 					<em> {item.company} </em>
 					<p>
 						{item.description}
@@ -103,6 +116,7 @@
 		transition: transform 0.4s ease-in-out;
 
 		display: flex;
+		width: 100%;
 	}
 
 	.content {
@@ -113,9 +127,13 @@
 		justify-content: center;
 		color: white;
 		flex: 0 0 100%;
-
+		width: 100%;
 		p {
 			margin: 0 20%;
 		}
+	}
+
+	.title {
+		text-align: center;
 	}
 </style>

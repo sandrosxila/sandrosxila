@@ -2,7 +2,7 @@
 	import { onMount, setContext } from 'svelte';
 	import { writable } from 'svelte/store';
 	import '../styles.scss';
-	import Header from './Header.svelte';
+	import Header from '$lib/components/Header.svelte';
 
 	let mainElement: HTMLElement;
 

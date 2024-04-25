@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { createEventDispatcher } from "svelte";
+	import { createEventDispatcher } from 'svelte';
 
 	export let activeLineItem: number;
-	export let items: {title: string, company: string, startDate: string, description: string}[];
+	export let items: { title: string; company: string; startDate: string; description: string }[];
 
 	const dispatch = createEventDispatcher();
 
-	function onActiveLineItemChange(activeLineItem: number) {
+	function handleActiveLineItemChange(activeLineItem: number) {
 		dispatch('itemChange', {
 			activeLineItem
 		});
@@ -20,7 +20,7 @@
 				style:--left="{20 + i * 15}%"
 				class="line-item"
 				class:active-line-item={activeLineItem == i}
-				on:click={() => onActiveLineItemChange(i)}
+				on:click={() => handleActiveLineItemChange(i)}
 			>
 				<span>{item.startDate}</span>
 			</button>
@@ -37,7 +37,6 @@
 		width: 90%;
 		max-width: 800px;
 		margin: 0 auto;
-		/* border: 1px solid white; */
 	}
 
 	.line-wrapper {
@@ -47,7 +46,6 @@
 		background: white;
 		left: 0;
 		top: 50%;
-		/* overflow-x: hidden; */
 
 		&::before {
 			position: absolute;
@@ -87,12 +85,26 @@
 
 		span {
 			position: absolute;
-			white-space:nowrap;
+			white-space: nowrap;
 			top: -25px;
 			left: 50%;
 			transform: translate(-50%, 0);
 			color: white;
 			font-size: 0.7rem;
+		}
+
+		&:nth-child(even) {
+			span {
+				top: auto;
+				bottom: -25px;
+			}
+
+			@media screen and (min-width: 576px) {
+				span {
+					top: -25px;
+					bottom: auto;
+				}
+			}
 		}
 	}
 
