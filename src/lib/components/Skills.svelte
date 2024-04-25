@@ -54,12 +54,9 @@
 
 			<div class="cards">
 				{#each logos as { component, title }}
-					<div class="card">
-						<div class="logo">
+					<div class="card" {title}>
+						<div class="logo" >
 							<svelte:component this={component} />
-						</div>
-						<div class="title">
-							{title}
 						</div>
 					</div>
 				{/each}
@@ -71,7 +68,7 @@
 <style lang="scss">
 	.layout {
 		height: 100%;
-		width: 100%;
+		padding: 0 5%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -104,12 +101,6 @@
 		overflow: hidden;
 		border-radius: 0.75rem;
 		position: relative;
-
-		&:hover {
-			.title {
-				opacity: 1;
-			}
-		}
 	}
 
 	.logo {
@@ -119,19 +110,5 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-
-	.title {
-		position: absolute;
-		bottom: 0;
-		height: 100%;
-		background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
-		width: 100%;
-		display: flex;
-		align-items: flex-end;
-		justify-content: center;
-		padding-bottom: 0.5em;
-		opacity: 0;
-		transition: all 0.3s ease-in;
 	}
 </style>
