@@ -43,27 +43,12 @@
 
 	a {
 		text-decoration: none !important;
-
-		&:visited.active::after{
-			background: purple;
-		}
-
-		&.active::after{
-			background: blue;
-		}
+		color: black;
+		padding: 3px 6px;
 	}
 
 	.active {
-		position: relative;
-
-		&::after {
-			content: '';
-			width: 100%;
-			height: 1px;
-			
-			position: absolute;
-			bottom: 2px;
-			left: 0;
-		}
+		background-color: pink;
+		
 	}
 </style>
