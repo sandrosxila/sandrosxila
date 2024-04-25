@@ -47,7 +47,7 @@
 		{
 			title: 'Front-End Developer',
 			company: 'Productive Edge',
-			startDate: 'Feb 2023',
+			startDate: 'Present',
 			description:
 				'Worked with a big mono repo project. Used Lerna as a mono repo tool, RTK ' +
 				'with redux-observable (based on rxJs) for state management, Storybook and ' +

@@ -99,8 +99,13 @@
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
-		border-radius: 0.75rem;
+		/* border-radius: 0.75rem; */
 		position: relative;
+		border: 3px solid black;
+
+		@media screen and (min-width: 576px){
+			border: 4px solid black;
+		}
 	}
 
 	.logo {

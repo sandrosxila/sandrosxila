@@ -47,7 +47,7 @@
 		overflow: hidden;
 
 		&#about {
-			background: #191d32;
+			background: #8d2e62;
 
 			.container {
 				margin-bottom: 0;
@@ -55,15 +55,15 @@
 		}
 
 		&#experience {
-			background: #57375a;
+			background: #000;
 		}
 
 		&#skills {
-			background: #a0526c;
+			background: #FF5992;
 		}
 
 		&#projects {
-			background: #de796a;
+			background: #5da2d5;
 		}
 
 		&#contact {

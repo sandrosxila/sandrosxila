@@ -37,7 +37,6 @@
 <div class="wrapper">
     {#key phrase}
 			<p
-				class="kalam-regular"
 				in:typewriter
 				on:introend={() => {
 					if (phrase === phrases[0]) {
