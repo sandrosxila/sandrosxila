@@ -99,7 +99,7 @@
 				bottom: -25px;
 			}
 
-			@media screen and (min-width: 576px) {
+			@include app.mobileScreen {
 				span {
 					top: -25px;
 					bottom: auto;

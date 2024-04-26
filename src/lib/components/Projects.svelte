@@ -96,7 +96,11 @@
         &::before, &::after {
             content: '';
             height: 100%;
-            width: 60px;
+            width: max(4%, 0px);
+
+			@include app.mobileScreen {
+				width: 60px;
+			}
         }
 	}
 
