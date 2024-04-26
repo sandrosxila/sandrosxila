@@ -37,12 +37,19 @@
 </section>
 
 <style lang="scss">
-	$block-margin: 80px;
 	section {
+		--block-margin: 0px;
+
+		@include app.mobileScreen {
+			--block-margin: 80px;
+		}
+
+		$block-margin: var(--block-margin);
+
 		height: 100vh;
 		scroll-snap-align: start;
 		scroll-margin-block-start: $block-margin;
-		scroll-margin-block-end: -#{$block-margin};
+		scroll-margin-block-end: calc(-1 * #{$block-margin});
 		display: flex;
 		overflow: hidden;
 
@@ -74,11 +81,11 @@
 			height: calc(100vh - #{$block-margin});
 			padding-bottom: 0;
 		}
-	}
 
-	.container {
-		flex-grow: 1;
-		margin-bottom: $block-margin;
-		overflow: hidden;
+		.container {
+			flex-grow: 1;
+			margin-bottom: $block-margin;
+			overflow: hidden;
+		}
 	}
 </style>
